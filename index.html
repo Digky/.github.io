@@ -117,12 +117,6 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .benefit-card i {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
         .products {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -179,81 +173,6 @@
         }
     </style>
 </head>
-<body>
-    <nav class="navbar">
-        <div class="logo">CHICKEN LAB</div>
-    </nav>
-
-    <header class="header">
-        <div class="header-content">
-            <h1>CHICKEN LAB</h1>
-            <p>Premium pre-cooked chicken breast for your healthy lifestyle. Clean, convenient, and incredibly delicious.</p>
-            <a href="#products" class="btn">Shop Now</a>
-        </div>
-    </header>
-
-    <section class="section">
-        <div class="section-title">
-            <h2>Why Choose Chicken Lab?</h2>
-        </div>
-        <div class="benefits">
-            <div class="benefit-card">
-                <h3>High Protein</h3>
-                <p>26g of protein per serving to support your fitness goals</p>
-            </div>
-            <div class="benefit-card">
-                <h3>Time-Saving</h3>
-                <p>Ready to eat in minutes - perfect for busy professionals</p>
-            </div>
-            <div class="benefit-card">
-                <h3>Clean Label</h3>
-                <p>No preservatives, just natural ingredients you can trust</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="products">
-        <div class="section-title">
-            <h2>Our Products</h2>
-        </div>
-        <div class="products">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Classic Chicken Breast">
-                <h3>Classic Chicken Breast</h3>
-                <p>Perfectly seasoned, tender chicken breast</p>
-                <div class="nutrition-info">
-                    ✓ 26g Protein | ✓ 120 Calories | ✓ 2g Fat
-                </div>
-                <span class="price">$12.99 / pack</span>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Herb & Garlic">
-                <h3>Herb & Garlic</h3>
-                <p>Mediterranean-style with fresh herbs and garlic</p>
-                <div class="nutrition-info">
-                    ✓ 25g Protein | ✓ 125 Calories | ✓ 2.5g Fat
-                </div>
-                <span class="price">$13.99 / pack</span>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Lemon Pepper">
-                <h3>Lemon Pepper</h3>
-                <p>Zesty lemon with cracked black pepper</p>
-                <div class="nutrition-info">
-                    ✓ 26g Protein | ✓ 122 Calories | ✓ 2g Fat
-                </div>
-                <span class="price">$13.99 / pack</span>
-            </div>
-        </div>
-    </section>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<!-- ... existing head and style sections remain the same ... -->
-
 <body>
     <nav class="navbar">
         <div class="logo">CHICKEN LAB</div>
@@ -325,7 +244,34 @@
         </div>
     </section>
 
-    <!-- New Toronto Location Section -->
+    <section class="section" style="background: #f0f7f2;">
+        <div class="section-title">
+            <h2>Bulk Orders</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">Save more when you buy more!</p>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 20px;">10% OFF</h3>
+                <p style="font-size: 1.2rem; margin-bottom: 15px;">When you order 10 pieces or more</p>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h4 style="margin-bottom: 15px;">Bulk Order Pricing Example:</h4>
+                    <p>Regular Price: $10 CAD per piece</p>
+                    <p>Bulk Price (10+ pieces): $9 CAD per piece</p>
+                    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
+                        <p><strong>Example Savings:</strong></p>
+                        <p>10 pieces regular price: $100 CAD</p>
+                        <p>10 pieces bulk price: $90 CAD</p>
+                        <p style="color: var(--accent); font-weight: bold; margin-top: 10px;">You save: $10 CAD!</p>
+                    </div>
+                </div>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 20px;">Perfect for meal prep, families, or small businesses!</p>
+            </div>
+            <div style="text-align: center;">
+                <a href="#" class="btn" style="display: inline-block;">Place Bulk Order</a>
+            </div>
+        </div>
+    </section>
+
     <section class="section" style="background: #f8f9fa;">
         <div class="section-title">
             <h2>Find Us in Toronto</h2>
@@ -345,31 +291,3 @@
     </section>
 </body>
 </html>
-<!-- Add this after the products section and before the Toronto Location section -->
-<section class="section" style="background: #f0f7f2;">
-    <div class="section-title">
-        <h2>Bulk Orders</h2>
-        <p style="text-align: center; margin-bottom: 30px; color: #666;">Save more when you buy more!</p>
-    </div>
-    <div style="max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 20px;">10% OFF</h3>
-            <p style="font-size: 1.2rem; margin-bottom: 15px;">When you order 10 pieces or more</p>
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                <h4 style="margin-bottom: 15px;">Bulk Order Pricing Example:</h4>
-                <p>Regular Price: $10 CAD per piece</p>
-                <p>Bulk Price (10+ pieces): $9 CAD per piece</p>
-                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
-                    <p><strong>Example Savings:</strong></p>
-                    <p>10 pieces regular price: $100 CAD</p>
-                    <p>10 pieces bulk price: $90 CAD</p>
-                    <p style="color: var(--accent); font-weight: bold; margin-top: 10px;">You save: $10 CAD!</p>
-                </div>
-            </div>
-            <p style="font-size: 0.9rem; color: #666; margin-top: 20px;">Perfect for meal prep, families, or small businesses!</p>
-        </div>
-        <div style="text-align: center;">
-            <a href="#" class="btn" style="display: inline-block;">Place Bulk Order</a>
-        </div>
-    </div>
-</section>
