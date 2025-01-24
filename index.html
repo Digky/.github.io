@@ -3,17 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chicken Lab | Premium Poached Chicken</title>
-    <!-- Add AOS library for scroll animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Add Playfair Display font -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <title>Chicken Lab - Premium Vacuum Packed Chicken Breast</title>
     <style>
         :root {
-            --navy: #1B3358;
-            --navy-light: #2850A4;
+            --navy: #000080;
             --white: #ffffff;
         }
 
@@ -24,30 +17,24 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
+            font-family: 'Quicksand', 'Segoe UI', sans-serif;
+            background-color: var(--white);
             color: var(--navy);
-            background: var(--white);
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-        }
-
-        nav {
+        .navbar {
+            background-color: var(--navy);
+            padding: 1rem;
             position: fixed;
             width: 100%;
-            padding: 20px 40px;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(27, 51, 88, 0.1);
-            z-index: 100;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 28px;
-            color: var(--navy);
+        .navbar a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 1rem;
         }
 
         .hero {
@@ -56,209 +43,107 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(rgba(27, 51, 88, 0.05), rgba(27, 51, 88, 0.1));
-            padding: 0 20px;
+            background-color: var(--white);
+            padding-top: 60px;
         }
 
-        .hero-content {
-            max-width: 800px;
+        .product-section, .about-section, .contact-section {
+            padding: 4rem 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
-        h1 {
-            font-size: 56px;
-            margin-bottom: 20px;
-            color: var(--navy);
-            line-height: 1.2;
-        }
-
-        .tagline {
-            font-size: 22px;
-            color: var(--navy-light);
-            margin-bottom: 40px;
-            font-weight: 300;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 15px 40px;
-            background: var(--navy);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
-        }
-
-        .button:hover {
-            background: var(--navy-light);
-            transform: translateY(-2px);
-        }
-
-        .section {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 42px;
-            color: var(--navy);
-            margin-bottom: 20px;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .product-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(27, 51, 88, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
+            background-color: var(--white);
+            border: 2px solid var(--navy);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1rem;
+            text-align: center;
         }
 
         .product-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 25px;
-        }
-
-        .product-title {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: var(--navy);
-        }
-
-        .product-info {
-            background: rgba(27, 51, 88, 0.05);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-            font-size: 15px;
-            color: var(--navy);
+            max-width: 300px;
+            border-radius: 5px;
+            margin-bottom: 1rem;
         }
 
         .price {
-            font-size: 24px;
-            font-weight: 600;
+            font-size: 1.5rem;
             color: var(--navy);
-            font-family: 'Playfair Display', serif;
+            margin: 1rem 0;
         }
 
-        .bulk-section {
-            background: rgba(27, 51, 88, 0.05);
-            text-align: center;
-            border-radius: 20px;
-            padding: 60px 20px;
-        }
-
-        .contact-section {
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 42px;
-            }
-            .tagline {
-                font-size: 18px;
-            }
-            .section {
-                padding: 60px 20px;
-            }
+        .discount-badge {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 0.5rem;
+            border-radius: 5px;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">CHICKEN LAB</div>
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-    <section class="hero">
-        <div class="hero-content" data-aos="fade-up">
-            <h1>Premium Poached<br>Chicken Breast</h1>
-            <p class="tagline">Artisanal preparation meets healthy convenience</p>
-            <a href="#products" class="button">Explore Our Products</a>
+    <section id="home" class="hero">
+        <div>
+            <h1>Welcome to Chicken Lab</h1>
+            <p>Premium Vacuum Packed Pre-Cooked Chicken Breast</p>
         </div>
     </section>
 
-    <section class="section" id="products">
-        <div class="section-title" data-aos="fade-up">
-            <h2>Our Signature Products</h2>
-        </div>
-        <div class="product-grid">
-            <div class="product-card" data-aos="fade-up">
-                <img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Classic Poached Chicken" class="product-image">
-                <h3 class="product-title">Classic Poached</h3>
-                <p>Pure, clean taste for versatile use</p>
-                <div class="product-info">
-                    ✦ 26g Protein | ✦ 120 Calories | ✦ 2g Fat
-                </div>
-                <span class="price">$10 CAD</span>
-            </div>
-
-            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Herb Infused Chicken" class="product-image">
-                <h3 class="product-title">Herb Infused</h3>
-                <p>Delicate herbs and aromatics</p>
-                <div class="product-info">
-                    ✦ 26g Protein | ✦ 120 Calories | ✦ 2g Fat
-                </div>
-                <span class="price">$10 CAD</span>
-            </div>
-
-            <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Lemon & Thyme Chicken" class="product-image">
-                <h3 class="product-title">Lemon & Thyme</h3>
-                <p>Bright citrus notes with fresh thyme</p>
-                <div class="product-info">
-                    ✦ 26g Protein | ✦ 120 Calories | ✦ 2g Fat
-                </div>
-                <span class="price">$10 CAD</span>
-            </div>
+    <section id="products" class="product-section">
+        <h2>Our Products</h2>
+        <div class="product-card">
+            <img src="chicken-breast.jpg" alt="Vacuum Packed Chicken Breast" class="product-image">
+            <h3>Premium Chicken Breast</h3>
+            <p class="price">$10 CAD/piece</p>
+            <p class="discount-badge">10% off on bulk orders (10+ pieces)</p>
+            <p>High-quality, pre-cooked chicken breast, vacuum sealed for freshness</p>
         </div>
     </section>
 
-    <section class="section">
-        <div class="bulk-section" data-aos="fade-up">
-            <h2>Bulk Orders</h2>
-            <p style="margin: 20px 0; font-size: 20px;">Save 10% when you order 10 pieces or more</p>
-            <div class="product-info" style="display: inline-block; margin: 20px 0;">
-                Regular: $10 CAD/piece → Bulk (10+): $9 CAD/piece
-            </div>
-            <br>
-            <a href="#contact" class="button">Place Bulk Order</a>
-        </div>
+    <section id="about" class="about-section">
+        <h2>About Chicken Lab</h2>
+        <p>Located in the heart of Toronto, Chicken Lab specializes in providing premium quality pre-cooked chicken breast. Our vacuum sealing technology ensures maximum freshness and convenience.</p>
     </section>
 
-    <section class="section contact-section" id="contact" data-aos="fade-up">
-        <h2>Available in Toronto</h2>
-        <p style="margin: 20px 0;">Serving the GTA with premium poached chicken breast</p>
-        <a href="tel:+1234567890" class="button">Contact to Order</a>
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Toronto, Ontario</p>
+        <p>Email: info@chickenlab.com</p>
+        <p>Phone: (416) 555-0123</p>
     </section>
 
     <script>
-        AOS.init({
-            duration: 1000,
-            once: false,
-            mirror: true
-        });
+        // Fade in effect on scroll
+        const sections = document.querySelectorAll('.product-section, .about-section, .contact-section');
+
+        const fadeInOnScroll = () => {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight * 0.75) {
+                    section.classList.add('fade-in');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
     </script>
 </body>
 </html>
