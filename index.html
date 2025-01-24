@@ -3,295 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chicken Lab | Premium Pre-Cooked Chicken</title>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    :root {
-        --primary: #1B3358;  /* Navy blue */
-        --accent: #2850A4;   /* Lighter navy blue */
-        --light: #ffffff;    /* White */
-        --dark: #1B3358;     /* Navy blue */
-        --gray: #F5F7FA;     /* Light gray for sections */
-    }
-
-    body {
-        font-family: 'Montserrat', sans-serif;
-        line-height: 1.6;
-        color: var(--dark);
-        background-color: var(--light);
-    }
-
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-
-    .navbar {
-        position: fixed;
-        width: 100%;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.95);
-        z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .navbar .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--primary);
-    }
-
-    .header {
-        height: 100vh;
-        background: linear-gradient(rgba(27, 51, 88, 0.8), rgba(27, 51, 88, 0.9)),
-                    url('https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80');
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-    }
-
-    .header-content h1 {
-        font-size: 3.5rem;
-        margin-bottom: 1rem;
-        letter-spacing: 1px;
-    }
-
-    .header-content p {
-        font-size: 1.25rem;
-        margin-bottom: 2rem;
-        max-width: 600px;
-    }
-
-    .btn {
-        padding: 15px 30px;
-        background: var(--primary);
-        color: white;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        border-radius: 5px;
-        border: none;
-        font-weight: 600;
-    }
-
-    .btn:hover {
-        background: var(--accent);
-        transform: translateY(-2px);
-    }
-
-    .section {
-        padding: 100px 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .section-title {
-        text-align: center;
-        margin-bottom: 50px;
-    }
-
-    .section-title h2 {
-        font-size: 2.5rem;
-        color: var(--primary);
-        margin-bottom: 20px;
-    }
-
-    .benefits {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-        margin-bottom: 50px;
-    }
-
-    .benefit-card {
-        text-align: center;
-        padding: 30px;
-        background: var(--light);
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        border: 2px solid var(--primary);
-    }
-
-    .products {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 40px;
-    }
-
-    .product-card {
-        background: var(--light);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        border: 1px solid #e1e8f0;
-    }
-
-    .product-card:hover {
-        transform: translateY(-10px);
-    }
-
-    .product-card img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 5px;
-    }
-
-    .product-card h3 {
-        margin: 20px 0 10px;
-        font-size: 1.5rem;
-        color: var(--primary);
-    }
-
-    .nutrition-info {
-        background: var(--gray);
-        padding: 10px;
-        border-radius: 5px;
-        margin: 10px 0;
-        font-size: 0.9rem;
-        color: var(--primary);
-    }
-
-    .price {
-        font-size: 1.25rem;
-        color: var(--primary);
-        font-weight: bold;
-    }
-
-    @media (max-width: 768px) {
-        .header-content h1 {
-            font-size: 2.5rem;
+    <title>Chicken Lab | Premium Poached Chicken</title>
+    <!-- Add AOS library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Add Playfair Display font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #1B3358;
+            --navy-light: #2850A4;
+            --white: #ffffff;
         }
-        .header-content p {
-            font-size: 1.1rem;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--navy);
+            background: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            padding: 20px 40px;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(27, 51, 88, 0.1);
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 28px;
+            color: var(--navy);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(27, 51, 88, 0.05), rgba(27, 51, 88, 0.1));
             padding: 0 20px;
         }
-    }
-</style>
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 22px;
+            color: var(--navy-light);
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--navy);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .button:hover {
+            background: var(--navy-light);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .product-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(27, 51, 88, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .product-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+
+        .product-info {
+            background: rgba(27, 51, 88, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 15px;
+            color: var(--navy);
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--navy);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bulk-section {
+            background: rgba(27, 51, 88, 0.05);
+            text-align: center;
+            border-radius: 20px;
+            padding: 60px 20px;
+        }
+
+        .contact-section {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 42px;
+            }
+            .tagline {
+                font-size: 18px;
+            }
+            .section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
+    <nav>
         <div class="logo">CHICKEN LAB</div>
     </nav>
 
-    <header class="header">
-        <div class="header-content">
-            <h1>CHICKEN LAB</h1>
-            <p>Premium pre-cooked chicken breast, made fresh in Toronto. Clean, convenient, and incredibly delicious.</p>
-            <a href="#products" class="btn">Order Now</a>
-        </div>
-    </header>
-
-    <section class="section">
-        <div class="section-title">
-            <h2>Why Choose Chicken Lab?</h2>
-        </div>
-        <div class="benefits">
-            <div class="benefit-card">
-                <h3>Made in Toronto</h3>
-                <p>Freshly prepared in our Toronto facility</p>
-            </div>
-            <div class="benefit-card">
-                <h3>High Protein</h3>
-                <p>26g of protein per piece to fuel your day</p>
-            </div>
-            <div class="benefit-card">
-                <h3>Vacuum Packed</h3>
-                <p>Stays fresh longer with our vacuum seal technology</p>
-            </div>
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Premium Poached<br>Chicken Breast</h1>
+            <p class="tagline">Artisanal preparation meets healthy convenience</p>
+            <a href="#products" class="button">Explore Our Products</a>
         </div>
     </section>
 
     <section class="section" id="products">
-        <div class="section-title">
-            <h2>Our Products</h2>
-            <p style="text-align: center; margin-bottom: 30px; color: #666;">All chicken breasts are $10 CAD per piece</p>
+        <div class="section-title" data-aos="fade-up">
+            <h2>Our Signature Products</h2>
         </div>
-        <div class="products">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Classic Chicken Breast">
-                <h3>Classic Chicken Breast</h3>
-                <p>Simply seasoned, perfect for any meal</p>
-                <div class="nutrition-info">
-                    ✓ 26g Protein | ✓ 120 Calories | ✓ 2g Fat
+        <div class="product-grid">
+            <div class="product-card" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Classic Poached Chicken" class="product-image">
+                <h3 class="product-title">Classic Poached</h3>
+                <p>Pure, clean taste for versatile use</p>
+                <div class="product-info">
+                    ✦ 26g Protein | ✦ 120 Calories | ✦ 2g Fat
                 </div>
                 <span class="price">$10 CAD</span>
             </div>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Herb & Garlic">
-                <h3>Herb & Garlic</h3>
-                <p>Mediterranean-style with fresh herbs</p>
-                <div class="nutrition-info">
-                    ✓ 26g Protein | ✓ 125 Calories | ✓ 2g Fat
+            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Herb Infused Chicken" class="product-image">
+                <h3 class="product-title">Herb Infused</h3>
+                <p>Delicate herbs and aromatics</p>
+                <div class="product-info">
+                    ✦ 26g Protein | ✦ 120 Calories | ✦ 2g Fat
                 </div>
                 <span class="price">$10 CAD</span>
             </div>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1632187981988-40f3cbceab03?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Lemon Pepper">
-                <h3>Lemon Pepper</h3>
-                <p>Zesty lemon with cracked black pepper</p>
-                <div class="nutrition-info">
-                    ✓ 26g Protein | ✓ 122 Calories | ✓ 2g Fat
+            <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Lemon & Thyme Chicken" class="product-image">
+                <h3 class="product-title">Lemon & Thyme</h3>
+                <p>Bright citrus notes with fresh thyme</p>
+                <div class="product-info">
+                    ✦ 26g Protein | ✦ 120 Calories | ✦ 2g Fat
                 </div>
                 <span class="price">$10 CAD</span>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background: #f0f7f2;">
-        <div class="section-title">
+    <section class="section">
+        <div class="bulk-section" data-aos="fade-up">
             <h2>Bulk Orders</h2>
-            <p style="text-align: center; margin-bottom: 30px; color: #666;">Save more when you buy more!</p>
-        </div>
-        <div style="max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-            <div style="text-align: center; margin-bottom: 30px;">
-                <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 20px;">10% OFF</h3>
-                <p style="font-size: 1.2rem; margin-bottom: 15px;">When you order 10 pieces or more</p>
-                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                    <h4 style="margin-bottom: 15px;">Bulk Order Pricing Example:</h4>
-                    <p>Regular Price: $10 CAD per piece</p>
-                    <p>Bulk Price (10+ pieces): $9 CAD per piece</p>
-                    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
-                        <p><strong>Example Savings:</strong></p>
-                        <p>10 pieces regular price: $100 CAD</p>
-                        <p>10 pieces bulk price: $90 CAD</p>
-                        <p style="color: var(--accent); font-weight: bold; margin-top: 10px;">You save: $10 CAD!</p>
-                    </div>
-                </div>
-                <p style="font-size: 0.9rem; color: #666; margin-top: 20px;">Perfect for meal prep, families, or small businesses!</p>
+            <p style="margin: 20px 0; font-size: 20px;">Save 10% when you order 10 pieces or more</p>
+            <div class="product-info" style="display: inline-block; margin: 20px 0;">
+                Regular: $10 CAD/piece → Bulk (10+): $9 CAD/piece
             </div>
-            <div style="text-align: center;">
-                <a href="#" class="btn" style="display: inline-block;">Place Bulk Order</a>
-            </div>
+            <br>
+            <a href="#contact" class="button">Place Bulk Order</a>
         </div>
     </section>
 
-    <section class="section" style="background: #f8f9fa;">
-        <div class="section-title">
-            <h2>Find Us in Toronto</h2>
-        </div>
-        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-            <p style="margin-bottom: 20px;">
-                We're proudly based in Toronto, serving the GTA with premium pre-cooked chicken breast.
-            </p>
-            <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
-                <h3 style="color: var(--accent); margin-bottom: 10px;">Order Information</h3>
-                <p>📱 Contact us to place your order</p>
-                <p>🚚 Available for pickup or delivery within the GTA</p>
-                <p>⏰ Orders processed within 24 hours</p>
-                <a href="tel:+1234567890" class="btn" style="display: inline-block; margin-top: 20px;">Contact Us to Order</a>
-            </div>
-        </div>
+    <section class="section contact-section" id="contact" data-aos="fade-up">
+        <h2>Available in Toronto</h2>
+        <p style="margin: 20px 0;">Serving the GTA with premium poached chicken breast</p>
+        <a href="tel:+1234567890" class="button">Contact to Order</a>
     </section>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true
+        });
+    </script>
 </body>
 </html>
