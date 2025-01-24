@@ -1,23 +1,252 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Chicken Lab</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Lab | Premium Pre-Cooked Chicken</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            line-height: 1.6;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container {
-            max-width: 800px;
+
+        :root {
+            --primary: #2c3e50;
+            --accent: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .header {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+                        url('https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .header-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background: var(--accent);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background: #219a52;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 100px 20px;
+            max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product-card h3 {
+            margin: 20px 0 10px;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .nutrition-info {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            .header-content p {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Website</h1>
-        <p>This is my first website hosted on GitHub Pages!</p>
-    </div>
+    <nav class="navbar">
+        <div class="logo">CHICKEN LAB</div>
+    </nav>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>CHICKEN LAB</h1>
+            <p>Premium pre-cooked chicken breast for your healthy lifestyle. Clean, convenient, and incredibly delicious.</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="section-title">
+            <h2>Why Choose Chicken Lab?</h2>
+        </div>
+        <div class="benefits">
+            <div class="benefit-card">
+                <h3>High Protein</h3>
+                <p>26g of protein per serving to support your fitness goals</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Time-Saving</h3>
+                <p>Ready to eat in minutes - perfect for busy professionals</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Clean Label</h3>
+                <p>No preservatives, just natural ingredients you can trust</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="products">
+        <div class="section-title">
+            <h2>Our Products</h2>
+        </div>
+        <div class="products">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Classic Chicken Breast">
+                <h3>Classic Chicken Breast</h3>
+                <p>Perfectly seasoned, tender chicken breast</p>
+                <div class="nutrition-info">
+                    ✓ 26g Protein | ✓ 120 Calories | ✓ 2g Fat
+                </div>
+                <span class="price">$12.99 / pack</span>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Herb & Garlic">
+                <h3>Herb & Garlic</h3>
+                <p>Mediterranean-style with fresh herbs and garlic</p>
+                <div class="nutrition-info">
+                    ✓ 25g Protein | ✓ 125 Calories | ✓ 2.5g Fat
+                </div>
+                <span class="price">$13.99 / pack</span>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Lemon Pepper">
+                <h3>Lemon Pepper</h3>
+                <p>Zesty lemon with cracked black pepper</p>
+                <div class="nutrition-info">
+                    ✓ 26g Protein | ✓ 122 Calories | ✓ 2g Fat
+                </div>
+                <span class="price">$13.99 / pack</span>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
